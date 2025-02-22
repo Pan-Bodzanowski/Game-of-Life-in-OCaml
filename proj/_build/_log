@@ -1,0 +1,38 @@
+### Starting build.
+# Target: s.ml.depends, tags: { package(graphics), package(unix), extension:ml, file:s.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package unix -package graphics -modules s.ml > s.ml.depends
+# Target: c.ml.depends, tags: { package(graphics), package(unix), extension:ml, file:c.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package unix -package graphics -modules c.ml > c.ml.depends
+# Target: graphics.mli.depends, tags: { package(graphics), package(unix), extension:mli, file:graphics.mli, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package unix -package graphics -modules graphics.mli > graphics.mli.depends
+# Target: c.cmo, tags: { package(graphics), package(unix), byte, compile, extension:cmo, extension:ml, file:c.cmo, file:c.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package unix -package graphics -o c.cmo c.ml
++ ocamlfind ocamlc -c -package unix -package graphics -o c.cmo c.ml
+findlib: [WARNING] Interface graphics.cmi occurs in several directories: ., /home/pan-bodzanowski/.opam/5.1.0/lib/graphics
+# Target: graphics.cmi, tags: { package(graphics), package(unix), byte, compile, extension:mli, file:graphics.mli, interf, ocaml, quiet }
+ocamlfind ocamlc -c -package unix -package graphics -o graphics.cmi graphics.mli
++ ocamlfind ocamlc -c -package unix -package graphics -o graphics.cmi graphics.mli
+findlib: [WARNING] Interface graphics.cmi occurs in several directories: ., /home/pan-bodzanowski/.opam/5.1.0/lib/graphics
+# Target: s.cmo, tags: { package(graphics), package(unix), byte, compile, extension:cmo, extension:ml, file:s.cmo, file:s.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package unix -package graphics -o s.cmo s.ml
++ ocamlfind ocamlc -c -package unix -package graphics -o s.cmo s.ml
+findlib: [WARNING] Interface graphics.cmi occurs in several directories: ., /home/pan-bodzanowski/.opam/5.1.0/lib/graphics
+# Target: graphics.ml.depends, tags: { package(graphics), package(unix), extension:ml, file:graphics.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package unix -package graphics -modules graphics.ml > graphics.ml.depends
+# Target: c.cmx, tags: { package(graphics), package(unix), compile, extension:cmx, extension:ml, file:c.cmx, file:c.ml, implem, native, ocaml, quiet }
+ocamlfind ocamlopt -c -package unix -package graphics -o c.cmx c.ml
++ ocamlfind ocamlopt -c -package unix -package graphics -o c.cmx c.ml
+findlib: [WARNING] Interface graphics.cmi occurs in several directories: ., /home/pan-bodzanowski/.opam/5.1.0/lib/graphics
+# Target: graphics.cmx, tags: { package(graphics), package(unix), compile, extension:cmx, extension:ml, file:graphics.cmx, file:graphics.ml, implem, native, ocaml, quiet }
+ocamlfind ocamlopt -c -package unix -package graphics -o graphics.cmx graphics.ml
++ ocamlfind ocamlopt -c -package unix -package graphics -o graphics.cmx graphics.ml
+findlib: [WARNING] Interface graphics.cmi occurs in several directories: ., /home/pan-bodzanowski/.opam/5.1.0/lib/graphics
+# Target: s.cmx, tags: { package(graphics), package(unix), compile, extension:cmx, extension:ml, file:s.cmx, file:s.ml, implem, native, ocaml, quiet }
+ocamlfind ocamlopt -c -package unix -package graphics -o s.cmx s.ml
++ ocamlfind ocamlopt -c -package unix -package graphics -o s.cmx s.ml
+findlib: [WARNING] Interface graphics.cmi occurs in several directories: ., /home/pan-bodzanowski/.opam/5.1.0/lib/graphics
+# Target: s.native, tags: { package(graphics), package(unix), dont_link_with, extension:native, file:s.native, link, native, ocaml, program, quiet }
+ocamlfind ocamlopt -linkpkg -package unix -package graphics c.cmx graphics.cmx s.cmx -o s.native
++ ocamlfind ocamlopt -linkpkg -package unix -package graphics c.cmx graphics.cmx s.cmx -o s.native
+findlib: [WARNING] Interface graphics.cmi occurs in several directories: ., /home/pan-bodzanowski/.opam/5.1.0/lib/graphics
+# Compilation successful.
